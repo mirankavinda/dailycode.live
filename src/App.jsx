@@ -4,6 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import HomeScreen from './Screens/Home/HomeScreen'
 import { ThemeContext } from './context/ThemeContext'
+import { createBrowserRouter } from 'react-router-dom'
+import AddNewScreen from './Screens/NewCodeTip/AddNewScreen'
+
+const router=createBrowserRouter([
+  {
+    path:'/',
+    element:<HomeScreen/>
+  },
+  {
+    path:'new',
+    element:<AddNewScreen/>
+  }
+])
 
 function App() {
   const [count, setCount] = useState(0)
