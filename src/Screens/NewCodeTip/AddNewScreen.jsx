@@ -20,7 +20,7 @@ const AddNewScreen = () => {
         <input type="text" placeholder="Username" className="input input-bordered w-full border-primary"/>
       </div>
 
-      
+      <button className='btn w-full btn-primary mt-7'>Share</button>
     </div>
   )
 }
