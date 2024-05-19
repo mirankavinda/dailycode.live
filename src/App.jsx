@@ -8,7 +8,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='flex flex-col items-center p-4 md:p-10'>
+    <div className='flex flex-col items-center p-4 md:p-10'
+    data-theme="dark"
+    >
       <div className='max-w-2xl w-full items-center'>
         <HomeScreen />
       </div>
