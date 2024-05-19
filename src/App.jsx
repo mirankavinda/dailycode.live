@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import HomeScreen from './Screens/Home/HomeScreen'
 import { ThemeContext } from './context/ThemeContext'
-import { createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import AddNewScreen from './Screens/NewCodeTip/AddNewScreen'
 
 const router=createBrowserRouter([
@@ -28,7 +28,7 @@ function App() {
     data-theme={theme}
     >
       <div className='max-w-2xl w-full items-center'>
-        <HomeScreen />
+        <RouterProvider router={router}/>
       </div>
     </div>
     </ThemeContext.Provider>
