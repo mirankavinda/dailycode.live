@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-#dbconnection
-git rm --cached utils/index.js    # For a specific file
-git rm --cached -r utils/         # For a folder
