@@ -1,0 +1,6 @@
+{
+    "dialect": "postgresql",
+    "out": "./migrations-folder",
+    "schema": "./src/db",
+    "breakpoints": false
+}
