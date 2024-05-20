@@ -2,5 +2,9 @@
     "dialect": "postgresql",
     "out": "./migrations-folder",
     "schema": "./src/db",
-    "breakpoints": false
+    "breakpoints": false,
+    "driver":"pg",
+    "dbCredentials":{
+        "connectionsString":"postgresql://linebreak-db_owner:dCjQ4XtAbeH9@ep-young-cherry-a5z1i4lg.us-east-2.aws.neon.tech/linebreak-db?sslmode=require"
+    }
 }
