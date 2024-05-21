@@ -4,9 +4,11 @@ import { ChevronLeft, Info, Send } from 'lucide-react'
 import { db } from '../../../utils';
 import { DailyTips } from '../../../utils/schema';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 
 function AddNewScreen() {
 
+  const navigation = useNavigate();
   const [codetips,setCodeTip] = useState();
   const [username,setUsername] = useState();
   const [showAlert, setShowAlert] = useState(false);
@@ -53,7 +55,9 @@ function AddNewScreen() {
         <span className='text-white'>Congratulation! Your Coding Tips added successfully</span>
       </div>}
 
-      <button className='btn mt-7'> <ChevronLeft/> Back</button>
+      <button className='btn mt-7' onClick={()=>navigation('/')}>
+        <ChevronLeft/> 
+        Back</button>
       <h2 className='font-bold text-2xl mt-5'>Help the beginners to write a better code </h2>
       <div className='flex flex-col mt-7 gap-2'>
         <label>Your Code Tip *</label>

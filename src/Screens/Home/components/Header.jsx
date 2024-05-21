@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../../../context/ThemeContext'
 import { CirclePlus } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+  const navigation = useNavigate();
   const { theme, setTheme } = useContext(ThemeContext)
 
   const toggleTheme = () => {
@@ -11,8 +13,12 @@ const Header = () => {
 
   return (
     <div className='flex flex-row justify-between items-center shadow-lg p-4 border rounded-lg'>
-      <button className='btn btn-primary btn-sm md:btn-md'><CirclePlus className='h-4 w-4'/>Code Tip</button>
+      <button className='btn btn-primary btn-sm md:btn-md'
+      onClick={()=>navigation('/new')}
+      >
+        <CirclePlus className='h-4 w-4'/>Code Tip</button>
       <h2 className='font-bold text-sm md:text-2xl'>LineBreak;</h2>
+
       <div className='items-center'>
         <label className="flex cursor-pointer gap-2" onChange={toggleTheme}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
