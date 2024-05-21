@@ -12,12 +12,12 @@ const Header = () => {
   }
 
   return (
-    <div className='flex flex-row justify-between items-center shadow-lg p-4 border rounded-lg'>
+    <div className='flex flex-row justify-between items-center p-4  border rounded-lg'>
       <button className='btn btn-primary btn-sm md:btn-md'
       onClick={()=>navigation('/new')}
       >
         <CirclePlus className='h-4 w-4'/>Code Tip</button>
-      <h2 className='font-bold text-sm md:text-2xl'>LineBreak;</h2>
+      <h2 className='font-bold text-xl md:text-3xl'>LineBreak</h2>
 
       <div className='items-center'>
         <label className="flex cursor-pointer gap-2" onChange={toggleTheme}>
