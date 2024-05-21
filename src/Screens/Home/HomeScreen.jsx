@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 import { db } from '../../../utils'
 import { DailyTips } from '../../../utils/schema'
 import { desc } from 'drizzle-orm'
+import CodeList from './components/CodeList'
 
 function HomeScreen() {
 
@@ -29,6 +30,7 @@ function HomeScreen() {
         <Header/>
         <HeroSection/>
         <Tabs/>
+        <CodeList codeTipsList={codeTipsList}/>
     </div>
   )
 }
