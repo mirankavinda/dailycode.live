@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../../../context/ThemeContext'
-import { CirclePlus } from 'lucide-react'
+import { Plus } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
       <button className='btn btn-primary btn-sm md:btn-md'
       onClick={()=>navigation('/new')}
       >
-        <CirclePlus className='h-4 w-4'/>Code Tip</button>
+        <Plus className='h-4 w-4'/>Code Tip</button>
 
       <h2 className='font-bold text-xl md:text-3xl cursor-pointer'
       onClick={()=>navigation('/')}
