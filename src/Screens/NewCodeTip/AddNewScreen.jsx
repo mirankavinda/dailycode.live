@@ -9,7 +9,7 @@ function AddNewScreen() {
 
   const [codetips,setCodeTip] = useState();
   const [username,setUsername] = useState();
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   const onSavehandler=async() => {
     // logic to save data
@@ -24,10 +24,12 @@ function AddNewScreen() {
     {
       localStorage.setItem('username', username);
       console.log("Insert Data")
+      setUsername('')
+      setCodeTip('')
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
-      }, 3000);
+      }, 5000);
     }
   }
 
@@ -46,7 +48,8 @@ function AddNewScreen() {
       <h2 className='font-bold text-2xl mt-5'>Help the beginners to write a better code </h2>
       <div className='flex flex-col mt-7 gap-2'>
         <label>Your Code Tip *</label>
-        <textarea 
+        <textarea
+        value={codetips}
         onChange={(event) => setCodeTip(event.target.value)}
         className="textarea textarea-bordered border-primary" placeholder="Share your coding tips"></textarea>
       </div>
@@ -56,6 +59,7 @@ function AddNewScreen() {
           <span className='flex items-center gap-2 text-sm'><Info className='h-4 w-4'/>No Account Needed</span>
         </label>
         <input type="text" 
+        value={username}
         onChange={(event) => setUsername(event.target.value)}
         placeholder="Username" className="input input-bordered w-full border-primary"/>
       </div>
