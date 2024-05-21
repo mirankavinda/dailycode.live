@@ -17,7 +17,11 @@ const Header = () => {
       onClick={()=>navigation('/new')}
       >
         <CirclePlus className='h-4 w-4'/>Code Tip</button>
-      <h2 className='font-bold text-xl md:text-3xl'>LineBreak</h2>
+
+      <h2 className='font-bold text-xl md:text-3xl cursor-pointer'
+      onClick={()=>navigation('/')}
+      >
+        LineBreak</h2>
 
       <div className='items-center'>
         <label className="flex cursor-pointer gap-2" onChange={toggleTheme}>
