@@ -3,11 +3,11 @@ import { TrendingUp, Clock, ThumbsUp } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 
 function Tabs() {
-
+    
     const [activeTab, setActiveTab] = useState(0)
-    const params = useLocation();
-
-  return (
+    
+    return (
+    
     <div role="tablist" className="tabs tabs-boxed">
 
         <a role="tab" href='#tranding'
@@ -21,6 +21,7 @@ function Tabs() {
         <a role="tab" href='#voted'
         onClick={()=> setActiveTab(2)}
         className={`tab ${activeTab === 2 && 'tab-active'}`}> <ThumbsUp className='h-4 w-4 mr-2'/> Voted</a>
+        
     </div>
   )
 }
