@@ -5,7 +5,8 @@ function CodeList({codeTipsList}) {
   return (
     <div>
         {codeTipsList.map((codetips, index)=>(
-            <CodeTipsItem codetips={codetips} key={index} />
+            <CodeTipsItem codetips={codetips} key={index} 
+            index={index} />
         ))}
     </div>
   )
