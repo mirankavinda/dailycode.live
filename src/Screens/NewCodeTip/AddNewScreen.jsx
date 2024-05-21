@@ -1,20 +1,46 @@
 import React, { useState } from 'react'
 import Header from '../Home/components/Header'
 import { ChevronLeft, Info, Send } from 'lucide-react'
+import { db } from '../../../utils';
+import { DailyTips } from '../../../utils/schema';
+import moment from 'moment';
 
 function AddNewScreen() {
 
   const [codetips,setCodeTip] = useState();
   const [username,setUsername] = useState();
+  const [showAlert, setShowAlert] = useState(true);
 
-  const onSavehandler=() => {
+  const onSavehandler=async() => {
     // logic to save data
+    const result = await db.insert(DailyTips)
+    .values({
+      content:codetips,
+      username:username,
+      createdAt:moment().format('DD MMM yyyy')
+    }).returning({id:DailyTips.id})
 
+    if(result)
+    {
+      localStorage.setItem('username', username);
+      console.log("Insert Data")
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+    }
   }
 
   return (
     <div>
       <Header/>
+
+      {showAlert&& <div role="alert" className="alert alert-success mt-5 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="white" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span className='text-white'>Congratulation! Your Coding Tips added successfully</span>
+      </div>}
 
       <button className='btn mt-7'> <ChevronLeft/> Back</button>
       <h2 className='font-bold text-2xl mt-5'>Help the beginners to write a better code </h2>
