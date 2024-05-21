@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Home/components/Header'
 import { ChevronLeft, Info, Send } from 'lucide-react'
 import { db } from '../../../utils';
@@ -10,6 +10,15 @@ function AddNewScreen() {
   const [codetips,setCodeTip] = useState();
   const [username,setUsername] = useState();
   const [showAlert, setShowAlert] = useState(false);
+  const [exisitingUser, setExisitingUser] = useState(false);
+
+  useEffect(() => {
+    if(localStorage.getItem('username'))
+    {
+      setUsername(localStorage.getItem('username'));
+      setExisitingUser(true);
+    }
+  })
 
   const onSavehandler=async() => {
     // logic to save data
@@ -24,7 +33,7 @@ function AddNewScreen() {
     {
       localStorage.setItem('username', username);
       console.log("Insert Data")
-      setUsername('')
+      // setUsername('')
       setCodeTip('')
       setShowAlert(true);
       setTimeout(() => {
@@ -53,8 +62,8 @@ function AddNewScreen() {
         onChange={(event) => setCodeTip(event.target.value)}
         className="textarea textarea-bordered border-primary" placeholder="Share your coding tips"></textarea>
       </div>
-
-      <div className='flex flex-col mt-7 gap-2'>
+      
+      {!exisitingUser&& <div className='flex flex-col mt-7 gap-2'>
         <label className='flex justify-between'>Your Username *
           <span className='flex items-center gap-2 text-sm'><Info className='h-4 w-4'/>No Account Needed</span>
         </label>
@@ -62,7 +71,7 @@ function AddNewScreen() {
         value={username}
         onChange={(event) => setUsername(event.target.value)}
         placeholder="Username" className="input input-bordered w-full border-primary"/>
-      </div>
+      </div>}
 
       <button className='btn w-full btn-primary mt-7'
       disabled={!(codetips && username)}
