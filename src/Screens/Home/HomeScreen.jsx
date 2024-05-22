@@ -30,7 +30,7 @@ function HomeScreen() {
         <Header/>
         <HeroSection/>
         <Tabs/>
-        <CodeList codeTipsList={codeTipsList}/>
+        <CodeList codeTipsList={codeTipsList} refreshData={GetAllCodeTips}/>
     </div>
   )
 }
