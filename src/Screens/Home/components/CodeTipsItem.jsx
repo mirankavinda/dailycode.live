@@ -12,7 +12,7 @@ function CodeTipsItem({codetips, index, refreshData}) {
   
   const upVoteHandler = async() => {
     
-    if(upvote())
+    if(upvote(DailyTips.id))
     {
     const result = await db.update(DailyTips)
     .set({
