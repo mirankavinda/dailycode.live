@@ -26,11 +26,11 @@ export const downvote = (id) => {
         downvotes:[]
     };
 
-    if(votes.downvote.indexOf(id) !==-1)
+    if(votes.downvotes.indexOf(id) !==-1)
     {
         return false
     }
-    votes.downvote.push(id);
+    votes.downvotes.push(id);
     const upVotes = votes.downvotes?.filter(codetips=>codetips!=id)
     votes.upvotes=upVotes;
 

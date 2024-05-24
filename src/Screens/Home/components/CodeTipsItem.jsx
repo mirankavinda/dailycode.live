@@ -3,7 +3,7 @@ import { ThumbsUp, ThumbsDown } from 'lucide-react'
 import { db } from './../../../../utils/index'
 import { eq } from 'drizzle-orm';
 import { DailyTips } from '../../../../utils/schema';
-import { upvote } from '../../../Service';
+import { downvote, upvote } from '../../../Service';
 
 // idea iteam
 
@@ -29,6 +29,8 @@ function CodeTipsItem({codetips, index, refreshData}) {
 
   const downVoteHandler = async() => {
     
+    if(downvote(codetips.id))
+    {
     const result = await db.update(DailyTips)
     .set({
       vote:codetips.vote - 1
@@ -40,6 +42,7 @@ function CodeTipsItem({codetips, index, refreshData}) {
     {
       refreshData();
     }
+  }
   }
 
   return (
