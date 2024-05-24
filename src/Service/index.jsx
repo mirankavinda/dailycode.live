@@ -17,3 +17,23 @@ export const upvote = (id) => {
     localStorage.setItem('votes',JSON.stringify(votes))
     return true
 }
+
+export const downvote = (id) => {
+    const votes = localStorage.getItem('votes')?
+    JSON.parse(localStorage.getItem('votes'))
+    :{
+        upvotes:[],
+        downvotes:[]
+    };
+
+    if(votes.downvote.indexOf(id) !==-1)
+    {
+        return false
+    }
+    votes.downvote.push(id);
+    const upVotes = votes.downvotes?.filter(codetips=>codetips!=id)
+    votes.upvotes=upVotes;
+
+    localStorage.setItem('votes',JSON.stringify(votes))
+    return true
+}

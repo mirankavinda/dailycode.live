@@ -8,7 +8,7 @@ import { upvote } from '../../../Service';
 // idea iteam
 
 function CodeTipsItem({codetips, index, refreshData}) {
-  
+
   const upVoteHandler = async() => {
     
     if(upvote(codetips.id))
@@ -28,6 +28,7 @@ function CodeTipsItem({codetips, index, refreshData}) {
 }
 
   const downVoteHandler = async() => {
+    
     const result = await db.update(DailyTips)
     .set({
       vote:codetips.vote - 1
