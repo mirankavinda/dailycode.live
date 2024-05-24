@@ -3,7 +3,7 @@ import { ThumbsUp, ThumbsDown } from 'lucide-react'
 import { db } from './../../../../utils/index'
 import { eq } from 'drizzle-orm';
 import { DailyTips } from '../../../../utils/schema';
-import { downvote, upvote } from '../../../Service';
+import { checkIsAlreadyDownVoted, checkIsAlreadyUpVoted, downvote, upvote } from '../../../Service';
 
 // idea iteam
 
@@ -51,13 +51,15 @@ function CodeTipsItem({codetips, index, refreshData}) {
             <h2 className='flex gap-2'><span>{index+1}. </span>{codetips?.content}</h2>
 
             <div className='flex flex-col items-center gap-2'>
-                <ThumbsUp className='h-4 w-4 text-current hover:text-orange-500 cursor-pointer'
+                <ThumbsUp className={`h-4 w-4 text-current hover:text-orange-500 cursor-pointer
+                ${checkIsAlreadyUpVoted(codetips.id) && 'text-orange-500'}`}
                 onClick={()=>upVoteHandler()}
                 />
 
                 <h2 className='text-md rounded-md p-2 font-bold'>{codetips.vote}</h2>
 
-                <ThumbsDown className='h-4 w-4 text-current hover:text-blue-500 cursor-pointer'
+                <ThumbsDown className={`h-4 w-4 text-current hover:text-blue-500 cursor-pointer
+                ${checkIsAlreadyDownVoted(codetips.id) && 'text-blue-500'}`}
                 onClick={()=>downVoteHandler()}
                 />
             </div>

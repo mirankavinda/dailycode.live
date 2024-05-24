@@ -37,3 +37,17 @@ export const downvote = (id) => {
     localStorage.setItem('votes',JSON.stringify(votes))
     return true
 }
+
+export const checkIsAlreadyUpVoted = (id) =>{
+    const votes=JSON.parse(localStorage.getItem('votes'))
+    {
+        return votes.upvotes.find(codetips=>codetips==id);
+    }
+}
+
+export const checkIsAlreadyDownVoted = (id) =>{
+    const votes=JSON.parse(localStorage.getItem('votes'))
+    {
+        return votes.downvotes.find(codetips=>codetips==id);
+    }
+}
