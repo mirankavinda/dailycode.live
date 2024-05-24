@@ -11,7 +11,7 @@ export const upvote = (id) => {
         return false
     }
     votes.upvotes.push(id);
-    const downVotes = votes.downvotes.filter(codetips=>codetips!=id)
+    const downVotes = votes.downvotes?.filter(codetips=>codetips!=id)
     votes.downvotes=downVotes;
 
     localStorage.setItem('votes',JSON.stringify(votes))
