@@ -21,7 +21,7 @@ const Header = () => {
       <h2 className='font-bold text-xl md:text-3xl cursor-pointer'
       onClick={()=>navigation('/')}
       >
-        LineBreak</h2>
+        dailycode</h2>
 
       <div className='items-center'>
         <label className="flex cursor-pointer gap-2" onChange={toggleTheme}>

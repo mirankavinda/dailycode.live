@@ -39,21 +39,33 @@ export const downvote = (id) => {
 }
 
 export const checkIsAlreadyUpVoted = (id) => {
-    const votes = localStorage.getItem('votes') ? JSON.parse(localStorage.getItem('votes')) : null;
-  
-    if (votes) {
-      return votes.upvotes.find(codetips => codetips === id);
-    }
-  
-    return false;
-  };
+  const votes = JSON.parse(localStorage.getItem('votes'));
 
-  export const checkIsAlreadyDownVoted = (id) => {
-    const votes = localStorage.getItem('votes') ? JSON.parse(localStorage.getItem('votes')) : null;
+  return votes?.upvotes?.find(codetips => codetips === id);
+}
+
+export const checkIsAlreadyDownVoted = (id) => {
+  const votes = JSON.parse(localStorage.getItem('votes'));
+
+  return votes?.downvotes?.find(codetips => codetips === id)
+}
+
+// export const checkIsAlreadyUpVoted = (id) => {
+//     const votes = localStorage.getItem('votes') ? JSON.parse(localStorage.getItem('votes')) : null;
   
-    if (votes) {
-      return votes.downvotes.find(codetips => codetips === id);
-    }
+//     if (votes) {
+//       return votes.upvotes.find(codetips => codetips === id);
+//     }
   
-    return false;
-  };
+//     return false;
+//   };
+
+//   export const checkIsAlreadyDownVoted = (id) => {
+//     const votes = localStorage.getItem('votes') ? JSON.parse(localStorage.getItem('votes')) : null;
+  
+//     if (votes) {
+//       return votes.downvotes.find(codetips => codetips === id);
+//     }
+  
+//     return false;
+//   };

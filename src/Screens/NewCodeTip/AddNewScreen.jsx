@@ -57,7 +57,7 @@ function AddNewScreen() {
       </div>}
 
       <button className='btn mt-7' onClick={()=>navigation('/')}>
-        <ChevronLeft/>  v
+        <ChevronLeft/>
         Back</button>
       <h2 className='font-bold text-2xl mt-5'>Help the beginners to write a better code </h2>
       <div className='flex flex-col mt-7 gap-2'>

@@ -14,7 +14,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Github className="h-4 w-4 hover:text-gray-900" />
+            <Github className="h-4 w-4 hover:text-gray-400" />
           </a>
 
           <a
