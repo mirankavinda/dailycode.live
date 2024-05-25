@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import linebreak from '/logo-linebreak.png'
 import './App.css'
 import HomeScreen from './Screens/Home/HomeScreen'
 import { ThemeContext } from './context/ThemeContext'

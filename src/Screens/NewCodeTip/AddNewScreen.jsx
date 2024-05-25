@@ -45,8 +45,9 @@ function AddNewScreen() {
   }
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header/>
+      <div style={{ flex: 1, overflowY: 'auto' }}>
 
       {showAlert&& <div role="alert" className="alert alert-success mt-5 shadow-lg">
         <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
@@ -83,6 +84,7 @@ function AddNewScreen() {
       >
         Share<Send className='h-4 w-4'/>
         </button>
+    </div>
     </div>
   )
 }

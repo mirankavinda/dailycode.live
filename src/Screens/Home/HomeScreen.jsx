@@ -7,6 +7,7 @@ import { db } from '../../../utils'
 import { DailyTips } from '../../../utils/schema'
 import { desc } from 'drizzle-orm'
 import CodeList from './components/CodeList'
+import Footer from './components/Footer'
 
 function HomeScreen() {
 
@@ -26,11 +27,14 @@ function HomeScreen() {
   }
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header/>
+        <div style={{ flex: 1, overflowY: 'auto' }}>
         <HeroSection/>
         <Tabs/>
         <CodeList codeTipsList={codeTipsList} refreshData={GetAllCodeTips}/>
+        <Footer/>
+        </div>
     </div>
   )
 }
