@@ -3,10 +3,7 @@ import { Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 font-bold">
-      <aside>
-        <p>Copyright © 2024 - All right reserved</p>
-        </aside>
+    <footer className="footer footer-center p-10 font-bold mt-20">
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a
@@ -22,11 +19,13 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Linkedin className="h-4 w-4" />
+            <Linkedin className="h-4 w-4 hover:text-gray-400" />
           </a>
-
         </div>
       </nav>
+      <aside>
+        <p>Connect with us @dailytipslive</p>
+      </aside>
     </footer>
   );
 };

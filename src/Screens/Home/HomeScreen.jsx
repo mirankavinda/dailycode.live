@@ -8,6 +8,7 @@ import { DailyTips } from '../../../utils/schema'
 import { desc } from 'drizzle-orm'
 import CodeList from './components/CodeList'
 import Footer from './components/Footer'
+import AboutUs from './components/AboutUs'
 
 function HomeScreen() {
 
@@ -33,6 +34,7 @@ function HomeScreen() {
         <HeroSection/>
         <Tabs/>
         <CodeList codeTipsList={codeTipsList} refreshData={GetAllCodeTips}/>
+        <AboutUs/>
         <Footer/>
         </div>
     </div>
