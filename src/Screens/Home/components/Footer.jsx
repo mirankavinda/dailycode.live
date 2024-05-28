@@ -3,7 +3,7 @@ import { Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 font-bold mt-20">
+    <footer className="footer footer-center p-10 mt-20">
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a
